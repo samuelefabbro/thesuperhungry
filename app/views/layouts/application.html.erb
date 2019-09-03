@@ -10,6 +10,18 @@
   </head>
 
   <body>
+    <header>
+      <h1><%= link_to "Superhungry", root_path %></h1>
+
+      <nav>
+        <%= link_to "Tours", products_path %>
+        <%= link_to "Info", info_path %>
+        <%= link_to "Cart(0)", "#" %>
+
+      </nav>
+    </header>
     <%= yield %>
+
+    <footer>Copyright 2019</footer>
   </body>
 </html>

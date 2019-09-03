@@ -1,0 +1,7 @@
+<h1>The Superhungry Tour n. #<%= @product.number %></h1>
+<h2><%= @product.date %></h2>
+<h2>Location: <%= @product.location %></h2>
+<h2>Price: <%= @product.price %></h2>
+<p>Number participants still available: <%= @product.availability %></p>
+
+<p><%= link_to  "back to products", products_path %></p>
