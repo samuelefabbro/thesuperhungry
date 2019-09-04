@@ -1,7 +1,5 @@
 <h1>Homepage</h1>
 
-<h2>Featured Tours</h2>
+<h2>Available Tours</h2>
 
-<% @products.each do |product| %>
-    <p><%= link_to product.date, product_path(product) %></p>
-<% end %>
+<%= render partial: "products/product", collection: @available_products %>

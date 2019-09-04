@@ -4,4 +4,10 @@
 <h2>Price: <%= @product.price %></h2>
 <p>Number participants still available: <%= @product.availability %></p>
 
+<%= simple_form_for [@product, @order_item] do |f| %>
+    <%= f.input :quantity %>
+
+    <%= f.button :submit, "Add to cart" %>
+<% end %>
+
 <p><%= link_to  "back to products", products_path %></p>

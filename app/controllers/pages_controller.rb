@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 
     def home
-        @products = Product.all
+        @available_products = Product.where(is_sold_out: false)
     end
 
     def info
