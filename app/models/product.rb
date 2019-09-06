@@ -8,4 +8,9 @@ class Product < ApplicationRecord
     validates :availability, presence: true
     validates :price, presence: true
     
+    def price_in_euros
+        price / 100
+    end
+
+
 end

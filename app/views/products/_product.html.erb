@@ -1,5 +1,7 @@
 <div class="product">
     <h3><%= link_to product.date, product_path(product) %></h3>
 
-    <p>€115</p>
+    <p>
+        <%= number_to_currency product.price_in_euros, unit: "€" %>
+    </p>
 </div>

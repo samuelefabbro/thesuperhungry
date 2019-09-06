@@ -39,6 +39,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'active_link_to'
 
 gem 'simple_form'
+gem 'country_select'
 
 gem 'carrierwave', '~> 2.0'
 gem 'mini_magick'

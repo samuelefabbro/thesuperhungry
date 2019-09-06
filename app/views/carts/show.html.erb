@@ -19,7 +19,7 @@
                 <td><%= item.product.number %></td>
                 <td><%= item.product.date %></td>
                 <td><%= item.product.location %></td>
-                <td><%= item.product.price %></td>
+                <td><%= number_to_currency item.product.price_in_euros, unit: "€" %></td>
                 <td><%= item.quantity %></td>
                 <td>
                     <%= link_to "Remove", product_order_item_path(item.product, item), method: :delete %>
@@ -29,6 +29,12 @@
         <% end %>
     </tbody>
 </table>
+
+<p>Total: <%= number_to_currency @current_cart.total_price_in_euros, unit: "€" %></p>
+
+<p>
+    <%= link_to "Continue to checkout", new_order_path %>
+</p>
 
 <% else %>
     <p class="empty">There are no items in your cart</p>
