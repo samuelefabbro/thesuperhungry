@@ -38,7 +38,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'active_link_to'
 
-gem 'simple_form'
+gem "simple_form", ">= 5.0.0"
 gem 'country_select'
 
 gem 'carrierwave', '~> 2.0'
