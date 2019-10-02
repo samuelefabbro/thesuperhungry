@@ -10,7 +10,7 @@ ActiveAdmin.register Order do
     selectable_column
     id_column
     column :name do |order|
-      order.first_name + "" + order.last_name
+      order.first_name + " " + order.last_name
     end
     column :email
     column :country
@@ -32,9 +32,15 @@ ActiveAdmin.register Order do
       f.input :country
     end
 
-    f.has_many :order_items, heading: "Items" do |itemf|
-      itemf.input :product, collection: Product.order(id: :asc).pluck(:date)
-      itemf.input :quantity
+    # f.has_many :order_items, heading: "Items" do |itemf|
+    #   itemf.input :product, collection: Product.order(date: :asc).pluck(:date), include_blank: false
+    #   itemf.input :quantity
+      
+    # end
+
+    f.has_many :order_items, heading: 'Items' do |a|
+      a.input :product, collection: Product.order(date: :asc).pluck(:date, :id)
+      a.input :quantity
     end
 
     f.actions

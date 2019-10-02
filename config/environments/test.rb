@@ -22,6 +22,8 @@ Rails.application.configure do
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
 
+  config.require_master_key = true
+
   # Raise exceptions instead of rendering exception templates.
   config.action_dispatch.show_exceptions = false
 
@@ -43,4 +45,16 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.sendgrid.net',
+    port:                 587,
+    domain:               'superhungrytour.com',
+    user_name:            Rails.application.credentials.sendgrid[Rails.env.to_sym][:sendgrid_username],
+    password:             Rails.application.credentials.sendgrid[Rails.env.to_sym][:sendgrid_password],
+    authentication:       'plain',
+    enable_starttls_auto: true 
+  }
 end
